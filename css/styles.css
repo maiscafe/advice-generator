@@ -4,19 +4,23 @@
     --grayishBlue: hsl(217, 19%, 38%);
     --darkGrayish: hsl(217, 19%, 24%);
     --darkBlue: hsl(218, 23%, 16%);
-
-    font-family: 'Manrope', sans-serif;
 }
 
 body {
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     background: var(--darkBlue);
     justify-content: center;
     align-items: center;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
 }
+
 main {
+    padding: 30px;
+    box-sizing: border-box;
     border-radius: 20px;
     width: 500px;
     min-height: 300px;
@@ -24,27 +28,68 @@ main {
     background-color: var(--darkGrayish);
     color: var(--lightCyan);
     text-align: center;
-    padding: 40px;
-    margin: 40px;
+    margin-bottom: -30px;
+    align-items: center;
 }
-.advice{
+.advice {
     color: var(--neonGreen);
     font-size: 14px;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 800px;
+    margin-top: 2rem;
 }
 
 .quote {
     font-size: 28px;
-    margin-top: 30px;
+    margin: 1.5rem 0;
+    line-height: 2.3rem;
+
+}
+.quote::before {
+    content: '“';
+}
+.quote::after {
+    content: '”';
+}
+main::after{
+    content: url('../assets/pattern-divider-desktop.svg');
+    margin-top: 1rem;
+}
+.dice{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dot {
+    user-select: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--neonGreen);
+}
+.dot:hover{
+    box-shadow: 0px 0px 30px -5px var(--neonGreen);
+}
+.dice__img{
+    width: 20px;
 }
 
-@media (max-width: 769px){
-    .quote{
-        font-size: 20px;
+
+@media (max-width: 769px) {
+    main{
+        max-width: 80vw;
     }
-    .advice{
+    main::after{
+        content: url('../assets/pattern-divider-mobile.svg');
+    }
+    .quote {
+        font-size: 20px;
+        line-height: 1.5rem;
+    }
+
+    .advice {
+        margin-top: 1rem;
         font-size: 10px;
     }
 }
