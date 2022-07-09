@@ -21,7 +21,7 @@ body {
 main {
     padding: 30px;
     box-sizing: border-box;
-    border-radius: 20px;
+    border-radius: 12px;
     width: 500px;
     min-height: 300px;
     height: auto;
@@ -33,11 +33,11 @@ main {
 }
 .advice {
     color: var(--neonGreen);
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 800px;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .quote {
@@ -51,6 +51,9 @@ main {
 }
 .quote::after {
     content: '”';
+}
+.break__line{
+    display: none;
 }
 main::after{
     content: url('../assets/pattern-divider-desktop.svg');
@@ -71,6 +74,9 @@ main::after{
 .dot:hover{
     box-shadow: 0px 0px 30px -5px var(--neonGreen);
 }
+.dot:active{
+    box-shadow: inset 0px 0px 5px var(--darkBlue)
+}
 .dice__img{
     width: 20px;
 }
@@ -81,7 +87,14 @@ main::after{
         max-width: 80vw;
     }
     main::after{
-        content: url('../assets/pattern-divider-mobile.svg');
+        display: none;
+    }
+    .break__line{
+        display: block;
+       
+    }
+    .break__line img{
+        width: 80%;
     }
     .quote {
         font-size: 20px;
